@@ -1,0 +1,22 @@
+package database;
+
+import java.util.ArrayList;
+
+public class HistoryDatabase {
+
+    private ArrayList<String> history = new ArrayList<>();
+
+    public void save(String exp, double result) {
+        history.add(exp + " = " + result);
+    }
+
+    public void fetchHistory() {
+        if (history.isEmpty()) {
+            System.out.println("No history found.");
+            return;
+        }
+        for (String h : history) {
+            System.out.println(h);
+        }
+    }
+}
