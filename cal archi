@@ -1,0 +1,12 @@
+CalculatorApp/
+│
+├── frontend/        → UI Layer
+│   └── CalculatorUI.java
+│
+├── backend/         → Business Logic + API
+│   ├── CalculatorService.java
+│   ├── ExpressionParser.java
+│   └── Stack.java
+│
+└── database/        → Data Storage
+    └── HistoryDatabase.java
