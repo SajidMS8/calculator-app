@@ -1,0 +1,19 @@
+package backend;
+
+import database.HistoryDatabase;
+
+public class CalculatorService {
+
+    private HistoryDatabase db = new HistoryDatabase();
+
+    public double calculate(String expression) {
+        String postfix = ExpressionParser.infixToPostfix(expression);
+        double result = ExpressionParser.evaluatePostfix(postfix);
+        db.save(expression, result);
+        return result;
+    }
+
+    public void showHistory() {
+        db.fetchHistory();
+    }
+}
